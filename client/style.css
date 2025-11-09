@@ -1,0 +1,17 @@
+:root{--toolbar-bg:#f3f3f3}
+html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif}
+.toolbar{
+  background:var(--toolbar-bg);
+  padding:8px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+#board{
+  display:block;
+  width:100%;
+  height:calc(100vh - 48px);
+  background:#fff;
+  touch-action:none; /* for touch/pointer drawing */
+}
+#status{margin-left:auto;padding-right:12px;color:#333;font-size:0.9rem}

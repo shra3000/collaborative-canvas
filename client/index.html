@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Collaborative Canvas</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toolbar">
+    <input id="color" type="color" value="#000000" />
+    <input id="size" type="range" min="1" max="40" value="4" />
+    <button id="undo">Undo</button>
+    <span id="status">Not connected</span>
+  </div>
+
+  <!-- Canvas -->
+  <canvas id="board"></canvas>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="websocket.js"></script>
+  <script src="canvas.js"></script>
+  <script>
+    // Toolbar handlers
+    window.addEventListener('load', () => {
+      if (window.CanvasApp && CanvasApp.init) {
+        CanvasApp.init();
+      }
+      document.getElementById('color').oninput = e => CanvasApp.setColor(e.target.value);
+      document.getElementById('size').oninput = e => CanvasApp.setSize(e.target.value);
+      document.getElementById('undo').onclick = () => window.requestUndo();
+    });
+  </script>
+</body>
+</html>

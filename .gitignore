@@ -1,0 +1,11 @@
+# Collaborative Canvas Ignore List 
+node_modules 
+dist/ 
+.env 
+.vscode/ 
+.DS_Store 
+Thumbs.db 
+logs 
+*.log 
+npm-debug.log* 
+yarn-error.log* 
